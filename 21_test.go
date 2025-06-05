@@ -22,8 +22,9 @@ func Test_21(t *testing.T) {
 
 	for _, tc := range testcases {
 		t.Run(tc.text, func(t *testing.T) {
+			t.Log(tc.list1, tc.list2)
 			result := mergeTwoLists(tc.list1, tc.list2)
-			assert.Equal(t, tc.want, result)
+			assert.EqualExportedValues(t, tc.want, result)
 		})
 	}
 }
