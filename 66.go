@@ -1,24 +1,22 @@
 package main
 
-import (
-	"strconv"
-	"strings"
-)
-
 func plusOne(digits []int) []int {
-	result := make([]int, 0)
-	s := make([]string, 0)
-
-	for _, digit := range digits {
-		s = append(s, strconv.Itoa(digit))
+	if digits[len(digits)-1] == 9 {
+		for i := len(digits) - 1; i > 0; i-- {
+			if digits[i] == 9 {
+				digits[i] = 0
+			} else {
+				digits[i]++
+				break
+			}
+			if i == 0 {
+				tmp := make([]int, 0)
+				tmp = append(tmp, 1)
+				digits = append(tmp, digits...)
+			}
+		}
+	} else {
+		digits[len(digits)-1]++
 	}
-	sNum := strings.Join(s, "")
-	num, _ := strconv.Atoi(sNum)
-	num++
-	s = make([]string, 0)
-	for _, char := range strings.Split(strconv.Itoa(num), "") {
-		d, _ := strconv.Atoi(char)
-		result = append(result, d)
-	}
-	return result
+	return digits
 }
