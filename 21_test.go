@@ -16,8 +16,8 @@ func Test_21(t *testing.T) {
 		{"Example 1:", &ListNode{1, &ListNode{2, &ListNode{4, nil}}},
 			&ListNode{1, &ListNode{3, &ListNode{Val: 4}}},
 			&ListNode{1, &ListNode{1, &ListNode{2, &ListNode{3, &ListNode{4, &ListNode{4, nil}}}}}}},
-		{"Example 2:", &ListNode{}, &ListNode{}, &ListNode{}},
-		{"Example 3:", &ListNode{}, &ListNode{0, nil}, &ListNode{0, nil}},
+		{"Example 2:", nil, nil, nil},
+		{"Example 3:", nil, &ListNode{0, nil}, &ListNode{0, nil}},
 	}
 
 	for _, tc := range testcases {
