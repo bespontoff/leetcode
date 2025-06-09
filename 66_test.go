@@ -26,5 +26,4 @@ func Test_66(t *testing.T) {
 			assert.Equal(t, tc.want, result)
 		})
 	}
-
 }
