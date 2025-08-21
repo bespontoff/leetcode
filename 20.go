@@ -37,8 +37,5 @@ func isValid(s string) bool {
 
 		}
 	}
-	if len(stack) == 0 {
-		return true
-	}
-	return false
+	return len(stack) == 0
 }
