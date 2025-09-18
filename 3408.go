@@ -80,6 +80,6 @@ func (tm *TaskManager) Rmv(taskId int) {
 }
 
 func (tm *TaskManager) ExecTop() int {
-
-	return 0
+	t := tm.tasks.Pop().(*Task)
+	return t.userId
 }
